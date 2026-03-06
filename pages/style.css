@@ -729,7 +729,7 @@ body {
     display: inline-block;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 90%;
     background: var(--surface);
     border: 1px solid var(--border-color);
     display: flex;
