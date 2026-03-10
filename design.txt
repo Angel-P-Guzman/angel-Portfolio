@@ -1,0 +1,63 @@
+Projects Modal Design Implementation
+
+Overview
+- The projects section was upgraded so each project card opens a modal window with more details and images.
+- The implementation is in `index.html` and `css/style.css`.
+
+What Was Added
+1. Click behavior on each project card
+- Each `.project-card` in the Projects section now uses:
+  - `onclick="openModal('projectX')"`
+- This passes a unique project id (`project1`, `project2`, etc.) to JavaScript.
+
+2. Modal container in HTML
+- Added a modal near the bottom of `index.html`:
+  - `#projectModal` as the page overlay
+  - `.modal-content` as the dialog box
+  - `#modalBody` as dynamic content target
+  - close button (`&times;`) that calls `closeModal()`
+
+3. Project data model in JavaScript
+- Added a `projectData` object in `index.html`.
+- Each project entry contains:
+  - `title`, `date`, `role`, `description`
+  - `details` (array of bullet points)
+  - `technologies` (array of tags)
+  - `github` link
+  - `images` (array of image URLs)
+
+4. Dynamic modal rendering
+- `openModal(projectId)`:
+  - Looks up the project in `projectData`
+  - Builds HTML content for title, meta, description, images, feature list, tech tags, and optional GitHub button
+  - Injects markup into `#modalBody`
+  - Displays modal with `display: flex`
+  - Locks page scroll with `document.body.style.overflow = 'hidden'`
+
+5. Modal close controls
+- `closeModal()` hides modal and restores page scroll.
+- Added two extra close interactions:
+  - Click outside modal content (overlay click)
+  - Press `Escape` key
+
+6. Modal styling in CSS
+- Added modal-related styles in `css/style.css`:
+  - `.modal` full-screen overlay with blur and dark backdrop
+  - `.modal-content` card layout, border glow, shadow, and animation
+  - `.modal-close` hover rotation and highlight
+  - `.modal-meta`, `.modal-description`, `.modal-details`, `.modal-tags`
+  - `.modal-images` and `.modal-image` for responsive screenshots
+  - Custom scrollbar styling for long content
+
+7. Project card visual affordance
+- Updated `.project-card` to use `cursor: pointer` so cards clearly look clickable.
+
+8. Responsive behavior
+- Added responsive modal adjustments in media queries:
+  - Better padding/sizing on tablet and mobile
+  - Smaller heading/close button sizes on narrow screens
+  - Single-column image layout on smaller devices
+
+Notes
+- Placeholder image URLs are currently used (`via.placeholder.com`).
+- Replace those URLs in `projectData` with real screenshot paths when ready.

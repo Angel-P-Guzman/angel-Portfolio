@@ -56,10 +56,11 @@
     <section id="projects" class="projects">
         <div class="container">
             <h2>Featured Projects</h2>
+            <p class="projects-hint">Click any project card to view details, screenshots, and demos.</p>
             <div class="projects-grid">
 
                 <!-- Project 1 -->
-                <div class="project-card">
+                <div class="project-card" onclick="openModal('project1')" role="button" tabindex="0" aria-label="Open details for capytechnologies">
                     <div class="project-header">
                         <h3>capytechnologies</h3>
                         <span class="date">May 2025 - Present</span>
@@ -79,7 +80,7 @@
                 </div>
 
                 <!-- Project 2 -->
-                <div class="project-card">
+                <div class="project-card" onclick="openModal('project2')" role="button" tabindex="0" aria-label="Open details for Wireless Classroom Air Quality Monitor">
                     <div class="project-header">
                         <h3>Wireless Classroom Air Quality Monitor</h3>
                         <span class="date">December 2024</span>
@@ -98,7 +99,7 @@
                 </div>
 
                 <!-- Project 3 -->
-                <div class="project-card">
+                <div class="project-card" onclick="openModal('project3')" role="button" tabindex="0" aria-label="Open details for ytd-Downloader-GUI">
                     <div class="project-header">
                         <h3>ytd-Downloader-GUI</h3>
                         <span class="date">June 2025</span>
@@ -117,7 +118,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card">
+                <div class="project-card" onclick="openModal('project4')" role="button" tabindex="0" aria-label="Open details for Digimon ESP32 Virtual Pet">
                     <div class="project-header">
                         <h3>Digimon ESP32 Virtual Pet</h3>
                         <span class="date">June - September 2025</span>
@@ -135,7 +136,7 @@
                 </div>
 
                 <!-- Project 5 -->
-                <div class="project-card">
+                <div class="project-card" onclick="openModal('project5')" role="button" tabindex="0" aria-label="Open details for Aztec Connect - Club Scraper">
                     <div class="project-header">
                         <h3>Aztec Connect - Club Scraper</h3>
                         <span class="date">April 2025</span>
@@ -236,5 +237,207 @@
             <p>&copy; 2025 Angel Guzman. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal -->
+    <script>
+        const projectData = {
+            project1: {
+                title: "capytechnologies",
+                date: "May 2025 - Present",
+                role: "Programmer",
+                description: "Built Instagram story automation feature supporting 100+ test users. Developing backend infrastructure for scalable social media automation.",
+                details: [
+                    "Architected and implemented Instagram story automation system using Django and Celery for asynchronous task processing",
+                    "Deployed scalable backend infrastructure on Google Cloud Platform with Docker containerization",
+                    "Successfully onboarded and supported 100+ beta test users with automated story posting capabilities",
+                    "Implemented robust error handling and retry mechanisms for reliable social media API interactions",
+                    "Designed RESTful APIs for frontend integration and third-party service connections"
+                ],
+                technologies: ["Django", "Python", "Docker", "Celery", "Google Cloud", "PostgreSQL", "Redis", "REST APIs"],
+                github: "https://github.com/Angel-P-Guzman",
+                images: [
+                    "https://via.placeholder.com/800x400/0a0e27/00d9ff?text=Instagram+Automation+Dashboard",
+                    "https://via.placeholder.com/800x400/0a0e27/8b5cf6?text=Backend+Architecture"
+                ]
+            },
+            project2: {
+                title: "Wireless Classroom Air Quality Monitor",
+                date: "December 2024",
+                role: "Lead Developer - IoT Device",
+                description: "LED development of classroom CO₂/temperature/humidity monitor with SMS alerts. Improved indoor air awareness for students during pilot test.",
+                details: [
+                    "Designed and developed IoT sensor system using Arduino and Raspberry Pi for real-time air quality monitoring",
+                    "Integrated multiple sensors (CO₂, temperature, humidity) with data aggregation and processing",
+                    "Built Flask-based web dashboard for real-time data visualization and historical trends",
+                    "Implemented Twilio SMS alert system for threshold-based notifications to building managers",
+                    "Successfully piloted system in university classroom, improving student awareness of air quality"
+                ],
+                technologies: ["Arduino", "Flask", "Raspberry Pi", "Twilio", "Python", "SQLite", "JavaScript"],
+                github: "https://github.com/Angel-P-Guzman",
+                images: [
+                    "https://via.placeholder.com/800x400/0a0e27/00ff87?text=Air+Quality+Dashboard",
+                    "https://via.placeholder.com/800x400/0a0e27/ff006e?text=IoT+Device+Hardware"
+                ]
+            },
+            project3: {
+                title: "ytd-Downloader-GUI",
+                date: "June 2025",
+                role: "Developer",
+                description: "Created cross-platform GUI for video downloads with automated cloud uploads. Packaged via PyInstaller for easy distribution.",
+                details: [
+                    "Developed user-friendly GUI application using Python Tkinter for video downloading functionality",
+                    "Integrated yt-dlp library for high-quality video and audio extraction from multiple platforms",
+                    "Implemented automatic cloud upload feature via Discord API for convenient file storage",
+                    "Packaged application with PyInstaller for one-click deployment on Windows, macOS, and Linux",
+                    "Added features: format selection, quality options, batch downloading, and progress tracking"
+                ],
+                technologies: ["Python", "Tkinter", "PyInstaller", "Discord API", "yt-dlp", "Threading"],
+                github: "https://github.com/Angel-P-Guzman",
+                images: [
+                    "https://via.placeholder.com/800x400/0a0e27/00d9ff?text=Download+GUI+Interface",
+                    "https://via.placeholder.com/800x400/0a0e27/8b5cf6?text=Progress+Tracking"
+                ]
+            },
+            project4: {
+                title: "Digimon ESP32 Virtual Pet",
+                date: "June - September 2025",
+                role: "Solo Project",
+                description: "Virtual pet on ESP32 with display. Features actions like feeding, cleaning, and playing with custom sprites. Similar to Tamagotchi devices.",
+                details: [
+                    "Created a fully functional virtual pet game on ESP32 microcontroller with OLED display",
+                    "Designed custom pixel art sprites and animations for Digimon characters",
+                    "Implemented game logic: hunger system, cleanliness tracking, happiness meter, and evolution mechanics",
+                    "Developed button-based interaction system for feeding, cleaning, playing, and checking stats",
+                    "Used PlatformIO IDE for efficient C++ development and device programming"
+                ],
+                technologies: ["PlatformIO", "ESP32", "C++", "OLED Display", "Embedded Systems"],
+                github: "https://github.com/Angel-P-Guzman",
+                images: [
+                    "https://via.placeholder.com/800x400/0a0e27/ff006e?text=Virtual+Pet+Display",
+                    "https://via.placeholder.com/800x400/0a0e27/00ff87?text=Custom+Sprites"
+                ]
+            },
+            project5: {
+                title: "Aztec Connect - Club Scraper",
+                date: "April 2025",
+                role: "SDSU Hackathon",
+                description: "Designed scraper and web app improving discoverability of SDSU's 200+ clubs. Helps students find clubs that match their interests.",
+                details: [
+                    "Built web scraper to aggregate data from SDSU's 200+ student organizations",
+                    "Developed Django web application with search and filter functionality for club discovery",
+                    "Implemented categorization system by interests, meeting times, and club types",
+                    "Created responsive UI for easy browsing on desktop and mobile devices",
+                    "Completed during SDSU hackathon with focus on improving student engagement"
+                ],
+                technologies: ["Django", "Python", "BeautifulSoup", "Web Scraping", "SQLite", "HTML/CSS", "Bootstrap"],
+                github: "https://github.com/Angel-P-Guzman",
+                images: [
+                    "https://via.placeholder.com/800x400/0a0e27/00d9ff?text=Club+Search+Interface",
+                    "https://via.placeholder.com/800x400/0a0e27/8b5cf6?text=Club+Details+Page"
+                ]
+            }
+        };
+
+        const modalMarkupCache = {};
+
+        function createModalMarkup(project) {
+            return `
+                <h2>${project.title}</h2>
+                <div class="modal-meta">
+                    <span class="modal-date">${project.date}</span>
+                    <span class="modal-role">${project.role}</span>
+                </div>
+                <p class="modal-description">${project.description}</p>
+
+                <div class="modal-images">
+                    ${project.images.map(img => `<img src="${img}" alt="${project.title} screenshot" class="modal-image" loading="lazy" decoding="async">`).join('')}
+                </div>
+
+                <h3>Key Features & Achievements</h3>
+                <ul class="modal-details">
+                    ${project.details.map(detail => `<li>${detail}</li>`).join('')}
+                </ul>
+
+                <h3>Technologies Used</h3>
+                <div class="modal-tags">
+                    ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
+                </div>
+
+                ${project.github ? `<a href="${project.github}" target="_blank" class="btn btn-primary modal-btn">View on GitHub</a>` : ''}
+            `;
+        }
+
+        function preloadProjectImages() {
+            Object.values(projectData).forEach((project) => {
+                project.images.forEach((src) => {
+                    const img = new Image();
+                    img.src = src;
+                    img.decoding = 'async';
+                });
+            });
+        }
+
+        function openModal(projectId) {
+            const project = projectData[projectId];
+            if (!project) return;
+
+            if (!modalMarkupCache[projectId]) {
+                modalMarkupCache[projectId] = createModalMarkup(project);
+            }
+
+            document.getElementById('modalBody').innerHTML = modalMarkupCache[projectId];
+            document.getElementById('projectModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            document.body.classList.remove('modal-open');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Keyboard support for project cards (Enter/Space)
+        document.querySelectorAll('.project-card').forEach(function(card) {
+            card.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    card.click();
+                }
+            });
+        });
+
+        // Warm image cache after page load so the first modal open is faster.
+        window.addEventListener('load', function() {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(preloadProjectImages, { timeout: 1500 });
+            } else {
+                setTimeout(preloadProjectImages, 800);
+            }
+        });
+    </script>
 </body>
 </html>
