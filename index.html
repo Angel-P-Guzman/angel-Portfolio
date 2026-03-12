@@ -262,11 +262,7 @@
                     "Designed RESTful APIs for frontend integration and third-party service connections"
                 ],
                 technologies: ["Django", "Python", "Docker", "Celery", "Google Cloud", "PostgreSQL", "Redis", "REST APIs"],
-                github: "https://github.com/Angel-P-Guzman",
-                images: [
-                    "https://via.placeholder.com/800x400/0a0e27/00d9ff?text=Instagram+Automation+Dashboard",
-                    "https://via.placeholder.com/800x400/0a0e27/8b5cf6?text=Backend+Architecture"
-                ]
+                github: "https://github.com/Angel-P-Guzman"
             },
             project2: {
                 title: "Wireless Classroom Air Quality Monitor",
@@ -281,11 +277,7 @@
                     "Successfully piloted system in university classroom, improving student awareness of air quality"
                 ],
                 technologies: ["Arduino", "Flask", "Raspberry Pi", "Twilio", "Python", "SQLite", "JavaScript"],
-                github: "https://github.com/Angel-P-Guzman",
-                images: [
-                    "https://via.placeholder.com/800x400/0a0e27/00ff87?text=Air+Quality+Dashboard",
-                    "https://via.placeholder.com/800x400/0a0e27/ff006e?text=IoT+Device+Hardware"
-                ]
+                github: "https://github.com/Angel-P-Guzman"
             },
             project3: {
                 title: "ytd-Downloader-GUI",
@@ -300,11 +292,7 @@
                     "Added features: format selection, quality options, batch downloading, and progress tracking"
                 ],
                 technologies: ["Python", "Tkinter", "PyInstaller", "Discord API", "yt-dlp", "Threading"],
-                github: "https://github.com/Angel-P-Guzman",
-                images: [
-                    "https://via.placeholder.com/800x400/0a0e27/00d9ff?text=Download+GUI+Interface",
-                    "https://via.placeholder.com/800x400/0a0e27/8b5cf6?text=Progress+Tracking"
-                ]
+                github: "https://github.com/Angel-P-Guzman"
             },
             project4: {
                 title: "Digimon ESP32 Virtual Pet",
@@ -319,11 +307,7 @@
                     "Used PlatformIO IDE for efficient C++ development and device programming"
                 ],
                 technologies: ["PlatformIO", "ESP32", "C++", "OLED Display", "Embedded Systems"],
-                github: "https://github.com/Angel-P-Guzman",
-                images: [
-                    "https://via.placeholder.com/800x400/0a0e27/ff006e?text=Virtual+Pet+Display",
-                    "https://via.placeholder.com/800x400/0a0e27/00ff87?text=Custom+Sprites"
-                ]
+                github: "https://github.com/Angel-P-Guzman"
             },
             project5: {
                 title: "Aztec Connect - Club Scraper",
@@ -338,11 +322,7 @@
                     "Completed during SDSU hackathon with focus on improving student engagement"
                 ],
                 technologies: ["Django", "Python", "BeautifulSoup", "Web Scraping", "SQLite", "HTML/CSS", "Bootstrap"],
-                github: "https://github.com/Angel-P-Guzman",
-                images: [
-                    "https://via.placeholder.com/800x400/0a0e27/00d9ff?text=Club+Search+Interface",
-                    "https://via.placeholder.com/800x400/0a0e27/8b5cf6?text=Club+Details+Page"
-                ]
+                github: "https://github.com/Angel-P-Guzman"
             }
         };
 
@@ -357,10 +337,6 @@
                 </div>
                 <p class="modal-description">${project.description}</p>
 
-                <div class="modal-images">
-                    ${project.images.map(img => `<img src="${img}" alt="${project.title} screenshot" class="modal-image" loading="lazy" decoding="async">`).join('')}
-                </div>
-
                 <h3>Key Features & Achievements</h3>
                 <ul class="modal-details">
                     ${project.details.map(detail => `<li>${detail}</li>`).join('')}
@@ -373,16 +349,6 @@
 
                 ${project.github ? `<a href="${project.github}" target="_blank" class="btn btn-primary modal-btn">View on GitHub</a>` : ''}
             `;
-        }
-
-        function preloadProjectImages() {
-            Object.values(projectData).forEach((project) => {
-                project.images.forEach((src) => {
-                    const img = new Image();
-                    img.src = src;
-                    img.decoding = 'async';
-                });
-            });
         }
 
         function openModal(projectId) {
@@ -430,14 +396,6 @@
             });
         });
 
-        // Warm image cache after page load so the first modal open is faster.
-        window.addEventListener('load', function() {
-            if ('requestIdleCallback' in window) {
-                requestIdleCallback(preloadProjectImages, { timeout: 1500 });
-            } else {
-                setTimeout(preloadProjectImages, 800);
-            }
-        });
     </script>
 </body>
 </html>
