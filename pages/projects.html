@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Angel Guzman – backend, IoT, embedded systems, and more.">
+  <title>Projects – Angel Guzman</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── NAVBAR ──────────────────────────────────────────────── -->
+  <header class="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand" aria-label="Angel Guzman – home">
+        <span class="brand-name">Angel Guzman</span>
+        <span class="brand-tag">// dev</span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="mailto:angel.gu.perez@gmail.com" class="nav-cta">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── PAGE HEADER ───────────────────────────────────────── -->
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Projects</span>
+        </nav>
+        <h1>Projects</h1>
+        <p>Click any card to see the full details, tech stack, and links.</p>
+      </div>
+    </div>
+
+    <!-- ── FILTER BAR ────────────────────────────────────────── -->
+    <section class="projects-page" aria-label="Project list">
+      <div class="container">
+        <div class="filter-bar" role="group" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+          <button class="filter-btn" data-filter="iot">IoT / Embedded</button>
+          <button class="filter-btn" data-filter="devops">DevOps</button>
+          <button class="filter-btn" data-filter="desktop">Desktop / Tools</button>
+        </div>
+
+        <!-- ── CARD GRID ────────────────────────────────────── -->
+        <div class="proj-grid" id="proj-grid" aria-live="polite">
+
+          <button class="proj-card card-accent-1"
+                  data-id="capy"
+                  data-categories="backend devops"
+                  aria-label="Open details for CapyTechnologies">
+            <div class="proj-card-top">
+              <span class="card-tag">Backend · Cloud</span>
+              <span class="card-date">2025 – Present</span>
+            </div>
+            <h2 class="proj-card-title">CapyTechnologies</h2>
+            <p class="proj-card-desc">Instagram story automation platform supporting 100+ beta users. Async workers, Celery, Docker, GCP.</p>
+            <div class="card-stack">
+              <span>Django</span><span>Celery</span><span>Docker</span><span>GCP</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="proj-card card-accent-2"
+                  data-id="distributed"
+                  data-categories="backend devops"
+                  aria-label="Open details for Distributed Flask + Redis System">
+            <div class="proj-card-top">
+              <span class="card-tag">Distributed · DevOps</span>
+              <span class="card-date">2025</span>
+            </div>
+            <h2 class="proj-card-title">Flask + Redis Distributed Lab</h2>
+            <p class="proj-card-desc">Multi-container app with fault-tolerant REST endpoints, integration tests, and simulated Redis failures.</p>
+            <div class="card-stack">
+              <span>Python</span><span>Flask</span><span>Redis</span><span>Docker</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="proj-card card-accent-3"
+                  data-id="zachsherm"
+                  data-categories="backend devops"
+                  aria-label="Open details for zachsherm.quest production website">
+            <div class="proj-card-top">
+              <span class="card-tag">Web · Linux · DevOps</span>
+              <span class="card-date">2024 – 2025</span>
+            </div>
+            <h2 class="proj-card-title">zachsherm.quest</h2>
+            <p class="proj-card-desc">Production website on Linux VPS — Nginx reverse proxy, Docker, Cloudflare DNS + SSL.</p>
+            <div class="card-stack">
+              <span>Django</span><span>Nginx</span><span>Docker</span><span>Linux</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="proj-card card-accent-4"
+                  data-id="airquality"
+                  data-categories="iot"
+                  aria-label="Open details for Wireless Classroom Air Quality Monitor">
+            <div class="proj-card-top">
+              <span class="card-tag">IoT · Hardware</span>
+              <span class="card-date">Dec 2024</span>
+            </div>
+            <h2 class="proj-card-title">Air Quality Monitor</h2>
+            <p class="proj-card-desc">Wireless CO₂ / temp / humidity classroom monitor with Flask dashboard and Twilio SMS alerts.</p>
+            <div class="card-stack">
+              <span>Arduino</span><span>Raspberry Pi</span><span>Flask</span><span>Twilio</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="proj-card card-accent-1"
+                  data-id="digimon"
+                  data-categories="iot"
+                  aria-label="Open details for Digimon ESP32 Virtual Pet">
+            <div class="proj-card-top">
+              <span class="card-tag">Embedded · C++</span>
+              <span class="card-date">Jun – Sep 2025</span>
+            </div>
+            <h2 class="proj-card-title">Digimon ESP32 Virtual Pet</h2>
+            <p class="proj-card-desc">Tamagotchi-style virtual pet on ESP32 — custom sprites, state machine, hardware button handling.</p>
+            <div class="card-stack">
+              <span>C++</span><span>ESP32</span><span>PlatformIO</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="proj-card card-accent-2"
+                  data-id="ytd"
+                  data-categories="desktop"
+                  aria-label="Open details for ytd-Downloader-GUI">
+            <div class="proj-card-top">
+              <span class="card-tag">Desktop · Python</span>
+              <span class="card-date">Jun 2025</span>
+            </div>
+            <h2 class="proj-card-title">ytd-Downloader-GUI</h2>
+            <p class="proj-card-desc">Cross-platform GUI for video downloads with auto cloud upload via Discord API. Ships as a single executable.</p>
+            <div class="card-stack">
+              <span>Python</span><span>Tkinter</span><span>PyInstaller</span><span>Discord API</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <button class="proj-card card-accent-3"
+                  data-id="aztec"
+                  data-categories="backend"
+                  aria-label="Open details for Aztec Connect Club Scraper">
+            <div class="proj-card-top">
+              <span class="card-tag">Hackathon · Web</span>
+              <span class="card-date">Apr 2025</span>
+            </div>
+            <h2 class="proj-card-title">Aztec Connect</h2>
+            <p class="proj-card-desc">SDSU Hackathon — scraper + web app improving discoverability of 200+ student clubs.</p>
+            <div class="card-stack">
+              <span>Django</span><span>Python</span><span>Web Scraping</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </button>
+
+        </div><!-- /proj-grid -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ── PROJECT DETAIL MODAL ──────────────────────────────── -->
+  <div id="proj-modal" class="proj-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="proj-modal-backdrop"></div>
+    <div class="proj-modal-panel">
+      <button class="proj-modal-close" aria-label="Close project details">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div id="modal-body" class="proj-modal-body"><!-- filled by JS --></div>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span class="footer-name">Angel Guzman &copy; 2026</span>
+      <span class="footer-built">Built from scratch · Hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/projects.js"></script>
+</body>
+</html>

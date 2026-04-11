@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Angel Guzman – CS graduate, backend & systems developer in San Diego, CA.">
+  <title>About – Angel Guzman</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand" aria-label="Angel Guzman – home">
+        <span class="brand-name">Angel Guzman</span>
+        <span class="brand-tag">// dev</span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="mailto:angel.gu.perez@gmail.com" class="nav-cta">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>About</span>
+        </nav>
+        <h1>About Me</h1>
+        <p>A bit about who I am, how I got here, and what I'm working on.</p>
+      </div>
+    </div>
+
+    <section class="about-page" aria-label="About Angel Guzman">
+      <div class="container">
+
+        <div class="about-section">
+          <h2>Who I am</h2>
+          <p>
+            I'm Angel Guzman, a Computer Science graduate from San Diego State University (BS, May 2025).
+            I'm based in San Diego, CA and focused on backend systems, distributed applications,
+            and anything that touches the hardware layer.
+          </p>
+          <p>
+            I enjoy understanding how systems actually work — from TCP/IP and container networking
+            to microcontroller memory constraints. I'm comfortable debugging production issues at 2am
+            as much as designing clean REST APIs on a whiteboard.
+          </p>
+        </div>
+
+        <div class="about-section">
+          <h2>What I build</h2>
+          <p>
+            Most of my work lives in the backend. I've built containerised Python services with Docker
+            and deployed them in cloud and on-prem Linux environments. I've also done embedded work —
+            writing C++ for ESP32 microcontrollers and wiring up IoT sensor systems with Raspberry Pi and Arduino.
+          </p>
+          <p>
+            Projects I'm particularly proud of: a distributed Flask + Redis lab environment that simulates
+            real failure modes, a wireless classroom air quality monitor with SMS alerts, and a Digimon
+            virtual pet running on an ESP32 with custom sprites — just for the joy of it.
+          </p>
+        </div>
+
+        <div class="about-section">
+          <h2>Current focus</h2>
+          <p>
+            Building out the backend platform for <strong>CapyTechnologies</strong> — a social media
+            automation tool with Celery async workers, Docker, and Google Cloud. I care about reliability,
+            clean API design, and systems that don't fall over under load.
+          </p>
+          <p>
+            Also open to backend, systems, or IoT roles in San Diego or remote. If you're working on
+            something interesting in distributed systems, embedded hardware, or developer tooling — reach out.
+          </p>
+        </div>
+
+        <div class="about-section">
+          <h2>Elsewhere</h2>
+          <div class="cta-actions" style="justify-content:flex-start;flex-wrap:wrap;">
+            <a href="https://github.com/Angel-P-Guzman" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/angel-guzman-81b533236" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:angel.gu.perez@gmail.com" class="btn btn-primary">Email me</a>
+            <a href="resume.html" class="btn btn-ghost">Resume →</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span class="footer-name">Angel Guzman &copy; 2026</span>
+      <span class="footer-built">Built from scratch · Hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

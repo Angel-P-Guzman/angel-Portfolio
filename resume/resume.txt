@@ -1,40 +1,35 @@
 Angel Guzman 
-
-angel.gu.perez@gmail.com | https://www.linkedin.com/in/angel-guzman-81b533236 
-
-https://github.com/Angel-P-Guzman | (858) 231-9519 
-
-EDUCATION 
-    San Diego State University - Bachelor of Science in Computer Science - August, 2021 to May, 2025 
-
-RELEVANT SKILLS AND ABILITIES 
-Languages: Java, Python, C++, C#, MIPS assembly  
-Frameworks/Tools: Node.js, GDB, JDB, Flask, Brownie, JUnit, make 
-Web Development: CSS, HTML, JavaScript, Django 
-Systems/Platforms: Windows (10/11), Unix/Linux (Ubuntu, openBSD), Git, Google Cloud 
-Hardware: Knowledge of microprocessors (projects using GPIO), and general computer Hardware and   
-trouble shooting  
-Communication: Fluent in Spanish and English 
-
+angel.gu.perez@gmail.com | https://angel-guzman.cv/ | (858) 231-9519 | San Diego, CA 
+SUMMARY 
+Computer Science graduate focused on backend systems, distributed applications, and networking 
+fundamentals. Experienced in building containerized services, REST APIs, and IoT systems, with 
+strong debugging and systems-level problem solving. Comfortable working across Linux 
+environments, networking layers, and cloud deployments. 
+TECHNICAL SKILLS 
+Languages: Python, C++, Java, JavaScript, C# 
+Backend & Frameworks: Django, Flask, Node.js 
+Systems & Networking: Linux, REST APIs, TCP/IP basics, service communication, debugging 
+Tools: Docker, Git, GDB, Nginx, Google Cloud 
+Hardware/Embedded: Arduino, Raspberry Pi, ESP32 
+Core Concepts: Data Structures, Algorithms, Distributed Systems, API Design, Debugging 
 PROJECTS 
-capytechnologies ( May 2025 - Present) | Programmer  
-  Django, Docker, Celery scheduler, Python, HTML, CSS, Google Cloud 
--  Built Instagram story automation feature supporting 100+ test users 
--  Developing backend infrastructure for scalable social media automation 
-Wireless Classroom-air-quality-monitor - IoT device (December 2024)  | Lead Developer   Arduino, Flask server, Raspberry pi, Twillow 
--  Led dev of classroom CO₂/temp/humidity monitor with SMS alerts via Twilio. 
--  Improved indoor air awareness for students during pilot test. 
-ytd-Downloader-gui (June 2025) | Python, Tkinter, PyInstaller, Ytdlp, Discord 
--  Created cross-platform GUI for video downloads & automated cloud uploads. 
--  Packaged via PyInstaller for easy distribution. 
-Digimon-esp32-vpet (June 2025 - September 2025)  | solo project | platformIO, esp32 
--  Using an esp32 with a display to create a virtual pet, with actions like feeding the sprite, cleaning 
-and playing with it. Similar to Tamagotchi devices. With custom sprites 
-Aztec Connect - SDSU hackathon  (April 2025) | Built club icon scrapper | Django, Python,  
--  Designed scraper + web app improving discoverability of SDSU’s 200+ clubs. 
-
-Experience 
-Tutoring and After school instructor (June 2023 - May 2025) | Riteclick Learning Point LTE, 
-GradePotential 
--  Led classrooms (10-15 students) in LEGO robotics & STEM programs. 
--  Tutored students (incl. ADHD, Autism) in Math, Spanish, and CS fundamentals. 
+Distributed Flask + Redis System (Dockerized Lab Environment) | Python, Flask, Redis, Docker, 
+Integration Testing - - - - - 
+Built a multi-container distributed application separating API and state layers using Docker 
+Designed REST endpoints with fault-tolerant handling (503 on service failure) 
+Implemented integration test layers covering availability, API correctness, and state consistency 
+Simulated network/service failures (Redis downtime) to validate resilience 
+understanding of service communication, container networking, and system reliability 
+zachsherm.quest - Website | Developer | Django, Docker, Nginx, Cloudflare - - - - 
+Deployed and maintained a production website on a Linux VPS with custom domain and HTTPS 
+Configured Nginx reverse proxy and containerized services using Docker 
+Secured application with Cloudflare DNS + SSL protection 
+Managed server setup, debugging, and live updates in a Linux environment 
+CapyTechnologies – Backend Automation Platform | Django, Docker, Celery, Google Cloud - - 
+Built Instagram story automation feature supporting 100+ test users 
+Developing backend infrastructure for scalable social media automation 
+ESP32 Embedded Interface System | C++, PlatformIO - - 
+Developed embedded UI system with state management on microcontroller 
+Worked close to hardware constraints and low-level logic 
+EDUCATION 
+San Diego State University - Bachelor of Science in Computer Science - August, 2021 to May, 2025

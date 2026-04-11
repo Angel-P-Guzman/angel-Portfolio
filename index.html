@@ -1,399 +1,226 @@
-<!-- Need consistent with home.html -->
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Guzman - Portfolio</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Angel Guzman - backend &amp; systems developer based in San Diego, CA. CS grad from SDSU.">
+  <title>Angel Guzman</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Floating Background Shapes -->
-    <div class="floating-shapes">
-        <div class="shape circle shape-1"></div>
-        <div class="shape circle shape-2"></div>
-        <div class="shape square shape-3"></div>
-        <div class="shape triangle shape-4"></div>
-        <div class="shape circle shape-5"></div>
-        <div class="shape square shape-6"></div>
-        <div class="shape triangle shape-7"></div>
-        <div class="shape circle shape-8"></div>
-    </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">AG</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <!-- Skip nav for screen readers -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- -- NAVBAR --------------------------------------------- -->
+  <header class="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" aria-label="Angel Guzman - home">
+        <span class="brand-name">Angel Guzman</span>
+        <span class="brand-tag">// dev</span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="pages/projects.html">Projects</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li><a href="pages/resume.html">Resume</a></li>
+          <li>
+            <a href="mailto:angel.gu.perez@gmail.com" class="nav-cta">Contact Me</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- -- HERO ----------------------------------------------- -->
+  <main id="main-content">
+    <section class="hero" aria-labelledby="hero-heading">
+      <!-- Matter.js canvas lives behind content -->
+      <canvas id="physics-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero-content">
+        <p class="hero-eyebrow">Hi, I'm</p>
+        <h1 id="hero-heading" class="hero-name">Angel Guzman</h1>
+        <p class="hero-tagline">Backend &amp; Systems Developer</p>
+        <p class="hero-bio">
+          CS grad from SDSU. I build containerised services, REST APIs, and IoT systems.
+          Comfortable in Linux, distributed environments, and anywhere close to the metal.
+        </p>
+        <div class="hero-actions">
+          <a href="pages/projects.html" class="btn btn-primary">View Projects</a>
+          <a href="pages/resume.html" class="btn btn-outline">Resume</a>
+          <a href="https://github.com/Angel-P-Guzman" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <div class="hero-badges" aria-label="Tech stack highlights">
+          <span class="badge">Python</span>
+          <span class="badge">Docker</span>
+          <span class="badge">Django</span>
+          <span class="badge">Linux</span>
+          <span class="badge">C++</span>
+          <span class="badge">Flask</span>
+          <span class="badge">IoT</span>
+          <span class="badge">Node.js</span>
+        </div>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- -- FEATURED PROJECTS (teaser) --------------------- -->
+    <section class="section featured-projects" aria-labelledby="fp-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">What I've built</p>
+          <h2 id="fp-heading">Featured Projects</h2>
+        </div>
+
+        <div class="cards-grid">
+
+          <button class="project-card card-accent-1" data-id="capy" aria-label="Open details for CapyTechnologies">
+            <div class="card-top">
+              <span class="card-tag">Backend / Cloud</span>
+              <span class="card-date">2025 - Present</span>
+            </div>
+            <h3 class="card-title">CapyTechnologies</h3>
+            <p class="card-desc">Instagram story automation platform with Celery async workers, Docker deployment, and 100+ beta users.</p>
+            <div class="card-stack">
+              <span>Django</span><span>Celery</span><span>Docker</span><span>GCP</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">-></span>
+          </button>
+
+          <button class="project-card card-accent-2" data-id="airquality" aria-label="Open details for Air Quality Monitor">
+            <div class="card-top">
+              <span class="card-tag">IoT / Embedded</span>
+              <span class="card-date">Dec 2024</span>
+            </div>
+            <h3 class="card-title">Air Quality Monitor</h3>
+            <p class="card-desc">Wireless CO2 / temp / humidity classroom monitor with SMS alerts, Flask dashboard, and Raspberry Pi hub.</p>
+            <div class="card-stack">
+              <span>Arduino</span><span>Flask</span><span>Raspberry Pi</span><span>Twilio</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">-></span>
+          </button>
+
+          <button class="project-card card-accent-3" data-id="distributed" aria-label="Open details for Distributed Flask Redis Lab">
+            <div class="card-top">
+              <span class="card-tag">Distributed / DevOps</span>
+              <span class="card-date">2025</span>
+            </div>
+            <h3 class="card-title">Distributed Flask + Redis Lab</h3>
+            <p class="card-desc">Multi-container app separating API and state layers with fault-tolerant REST endpoints and full integration test coverage.</p>
+            <div class="card-stack">
+              <span>Python</span><span>Flask</span><span>Redis</span><span>Docker</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">-></span>
+          </button>
+
+          <button class="project-card card-accent-4" data-id="digimon" aria-label="Open details for Digimon ESP32 Virtual Pet">
+            <div class="card-top">
+              <span class="card-tag">Embedded / C++</span>
+              <span class="card-date">Jun - Sep 2025</span>
+            </div>
+            <h3 class="card-title">Digimon ESP32 Virtual Pet</h3>
+            <p class="card-desc">Tamagotchi-style virtual pet on ESP32 with custom sprites, state machine, and hardware input handling.</p>
+            <div class="card-stack">
+              <span>C++</span><span>ESP32</span><span>PlatformIO</span>
+            </div>
+            <span class="card-arrow" aria-hidden="true">-></span>
+          </button>
+
+        </div>
+
+        <div class="section-footer">
+          <a href="pages/projects.html" class="btn btn-outline">All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- -- QUICK SKILLS ------------------------------------ -->
+    <section class="section quick-skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">What I work with</p>
+          <h2 id="skills-heading">Skills &amp; Tools</h2>
+        </div>
+        <div class="skills-cols">
+          <div class="skill-col">
+            <h3>Languages</h3>
+            <ul>
+              <li>Python</li><li>C++</li><li>Java</li><li>JavaScript</li><li>C#</li>
             </ul>
+          </div>
+          <div class="skill-col">
+            <h3>Backend</h3>
+            <ul>
+              <li>Django</li><li>Flask</li><li>Node.js</li><li>REST APIs</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h3>Systems</h3>
+            <ul>
+              <li>Docker</li><li>Linux / Ubuntu</li><li>Nginx</li><li>Google Cloud</li>
+            </ul>
+          </div>
+          <div class="skill-col">
+            <h3>Hardware</h3>
+            <ul>
+              <li>Arduino</li><li>Raspberry Pi</li><li>ESP32</li><li>PlatformIO</li>
+            </ul>
+          </div>
         </div>
-    </nav>
-
-    <!-- Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Angel Guzman</h1>
-                <p class="hero-subtitle">Full Stack Developer | IoT Developer | Problem Solver</p>
-                <p class="hero-description">
-                    Computer Science graduate from San Diego State University. I build scalable applications, 
-                    IoT solutions, and automation tools using Python, JavaScript, and modern frameworks.
-                </p>
-                <div class="hero-links">
-                    <a href="https://github.com/Angel-P-Guzman" class="btn btn-primary" target="_blank">GitHub</a>
-                    <a href="https://www.linkedin.com/in/angel-guzman-81b533236" class="btn btn-secondary" target="_blank">LinkedIn</a>
-                    <a href="mailto:angel.gu.perez@gmail.com" class="btn btn-secondary">Email</a>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <p class="projects-hint">Click any project card to view details, screenshots, and demos.</p>
-            <div class="projects-grid">
-
-                <!-- Project 1 -->
-                <div class="project-card" onclick="openModal('project1')" role="button" tabindex="0" aria-label="Open details for capytechnologies">
-                    <div class="project-header">
-                        <h3>capytechnologies</h3>
-                        <span class="date">May 2025 - Present</span>
-                    </div>
-                    <p class="project-role">Programmer</p>
-                    <p class="project-description">
-                        Built Instagram story automation feature supporting 100+ test users. 
-                        Developing backend infrastructure for scalable social media automation.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Django</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Celery</span>
-                        <span class="tag">Google Cloud</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card" onclick="openModal('project2')" role="button" tabindex="0" aria-label="Open details for Wireless Classroom Air Quality Monitor">
-                    <div class="project-header">
-                        <h3>Wireless Classroom Air Quality Monitor</h3>
-                        <span class="date">December 2024</span>
-                    </div>
-                    <p class="project-role">Lead Developer - IoT Device</p>
-                    <p class="project-description">
-                        LED development of classroom CO₂/temperature/humidity monitor with SMS alerts.
-                        Improved indoor air awareness for students during pilot test.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Arduino</span>
-                        <span class="tag">Flask</span>
-                        <span class="tag">Raspberry Pi</span>
-                        <span class="tag">Twilio</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card" onclick="openModal('project3')" role="button" tabindex="0" aria-label="Open details for ytd-Downloader-GUI">
-                    <div class="project-header">
-                        <h3>ytd-Downloader-GUI</h3>
-                        <span class="date">June 2025</span>
-                    </div>
-                    <p class="project-role">Developer</p>
-                    <p class="project-description">
-                        Created cross-platform GUI for video downloads with automated cloud uploads. 
-                        Packaged via PyInstaller for easy distribution.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Tkinter</span>
-                        <span class="tag">PyInstaller</span>
-                        <span class="tag">Discord API</span>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card" onclick="openModal('project4')" role="button" tabindex="0" aria-label="Open details for Digimon ESP32 Virtual Pet">
-                    <div class="project-header">
-                        <h3>Digimon ESP32 Virtual Pet</h3>
-                        <span class="date">June - September 2025</span>
-                    </div>
-                    <p class="project-role">Solo Project</p>
-                    <p class="project-description">
-                        Virtual pet on ESP32 with display. Features actions like feeding, cleaning, 
-                        and playing with custom sprites. Similar to Tamagotchi devices.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">PlatformIO</span>
-                        <span class="tag">ESP32</span>
-                        <span class="tag">C++</span>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" onclick="openModal('project5')" role="button" tabindex="0" aria-label="Open details for Aztec Connect - Club Scraper">
-                    <div class="project-header">
-                        <h3>Aztec Connect - Club Scraper</h3>
-                        <span class="date">April 2025</span>
-                    </div>
-                    <p class="project-role">SDSU Hackathon</p>
-                    <p class="project-description">
-                        Designed scraper and web app improving discoverability of SDSU's 200+ clubs. 
-                        Helps students find clubs that match their interests.
-                    </p>
-                    <div class="project-tags">
-                        <span class="tag">Django</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Web Scraping</span>
-                    </div>
-                </div>
-
-            </div>
+    <!-- -- CONTACT CTA -------------------------------------- -->
+    <section class="section contact-cta" aria-labelledby="contact-heading">
+      <div class="container cta-inner">
+        <h2 id="contact-heading">Let's work together</h2>
+        <p>Open to backend, systems, or IoT roles. Based in San Diego, CA.</p>
+        <div class="cta-actions">
+          <a href="mailto:angel.gu.perez@gmail.com" class="btn btn-primary">angel.gu.perez@gmail.com</a>
+          <a href="https://www.linkedin.com/in/angel-guzman-81b533236" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Angel-P-Guzman" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-group">
-                    <h3>Languages</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">C++</span>
-                        <span class="skill-item">C#</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">MIPS Assembly</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3>Frameworks & Tools</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Django</span>
-                        <span class="skill-item">Flask</span>
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">Git</span>
-                        <span class="skill-item">GDB / JDB</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3>Web Development</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">HTML</span>
-                        <span class="skill-item">CSS</span>
-                        <span class="skill-item">JavaScript</span>
-                        <span class="skill-item">Responsive Design</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <h3>Systems & Platforms</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Windows 10/11</span>
-                        <span class="skill-item">Linux/Ubuntu</span>
-                        <span class="skill-item">Google Cloud</span>
-                        <span class="skill-item">IoT Development</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get In Touch</h2>
-            <p class="contact-subtitle">Feel free to reach out for opportunities or just to say hello!</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <a href="mailto:angel.gu.perez@gmail.com">angel.gu.perez@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <h3>Phone</h3>
-                    <p>(858) 231-9519</p>
-                </div>
-                <div class="contact-item">
-                    <h3>Find Me Online</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/Angel-P-Guzman" target="_blank">GitHub</a>
-                        <a href="https://www.linkedin.com/in/angel-guzman-81b533236" target="_blank">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Angel Guzman. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <div id="modalBody"></div>
-        </div>
+  <!-- -- FOOTER ------------------------------------------ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span class="footer-name">Angel Guzman &copy; 2026</span>
+      <span class="footer-built">Built from scratch / Hosted on GitHub Pages</span>
     </div>
+  </footer>
 
-    <!-- JavaScript for Modal -->
-    <script>
-        const projectData = {
-            project1: {
-                title: "capytechnologies",
-                date: "May 2025 - Present",
-                role: "Programmer",
-                description: "Built Instagram story automation feature supporting 100+ test users. Developing backend infrastructure for scalable social media automation.",
-                details: [
-                    "Architected and implemented Instagram story automation system using Django and Celery for asynchronous task processing",
-                    "Deployed scalable backend infrastructure on Google Cloud Platform with Docker containerization",
-                    "Successfully onboarded and supported 100+ beta test users with automated story posting capabilities",
-                    "Implemented robust error handling and retry mechanisms for reliable social media API interactions",
-                    "Designed RESTful APIs for frontend integration and third-party service connections"
-                ],
-                technologies: ["Django", "Python", "Docker", "Celery", "Google Cloud", "PostgreSQL", "Redis", "REST APIs"]
-            },
-            project2: {
-                title: "Wireless Classroom Air Quality Monitor",
-                date: "December 2024",
-                role: "Lead Developer - IoT Device",
-                description: "LED development of classroom CO₂/temperature/humidity monitor with SMS alerts. Improved indoor air awareness for students during pilot test.",
-                details: [
-                    "Designed and developed IoT sensor system using Arduino and Raspberry Pi for real-time air quality monitoring",
-                    "Integrated multiple sensors (CO₂, temperature, humidity) with data aggregation and processing",
-                    "Built Flask-based web dashboard for real-time data visualization and historical trends",
-                    "Implemented Twilio SMS alert system for threshold-based notifications to building managers",
-                    "Successfully piloted system in university classroom, improving student awareness of air quality"
-                ],
-                technologies: ["Arduino", "Flask", "Raspberry Pi", "Twilio", "Python", "SQLite", "JavaScript"],
-                github: "https://github.com/Angel-P-Guzman/Air-quality-Monitor"
-            },
-            project3: {
-                title: "ytd-Downloader-GUI",
-                date: "June 2025",
-                role: "Developer",
-                description: "Created cross-platform GUI for video downloads with automated cloud uploads. Packaged via PyInstaller for easy distribution.",
-                details: [
-                    "Developed user-friendly GUI application using Python Tkinter for video downloading functionality",
-                    "Integrated yt-dlp library for high-quality video and audio extraction from multiple platforms",
-                    "Implemented automatic cloud upload feature via Discord API for convenient file storage",
-                    "Packaged application with PyInstaller for one-click deployment on Windows, macOS, and Linux",
-                    "Added features: format selection, quality options, batch downloading, and progress tracking"
-                ],
-                technologies: ["Python", "Tkinter", "PyInstaller", "Discord API", "yt-dlp", "Threading"]
-            },
-            project4: {
-                title: "Digimon ESP32 Virtual Pet",
-                date: "June - September 2025",
-                role: "Solo Project",
-                description: "Virtual pet on ESP32 with display. Features actions like feeding, cleaning, and playing with custom sprites. Similar to Tamagotchi devices.",
-                details: [
-                    "Created a fully functional virtual pet game on ESP32 microcontroller with OLED display",
-                    "Designed custom pixel art sprites and animations for Digimon characters",
-                    "Implemented game logic: hunger system, cleanliness tracking, happiness meter, and evolution mechanics",
-                    "Developed button-based interaction system for feeding, cleaning, playing, and checking stats",
-                    "Used PlatformIO IDE for efficient C++ development and device programming"
-                ],
-                technologies: ["PlatformIO", "ESP32", "C++", "OLED Display", "Embedded Systems"],
-                github: "https://github.com/Angel-P-Guzman/digimon-esp32-vpet"
-            },
-            project5: {
-                title: "Aztec Connect - Club Scraper",
-                date: "April 2025",
-                role: "SDSU Hackathon",
-                description: "Designed scraper and web app improving discoverability of SDSU's 200+ clubs. Helps students find clubs that match their interests.",
-                details: [
-                    "Built web scraper to aggregate data from SDSU's 200+ student organizations",
-                    "Developed Django web application with search and filter functionality for club discovery",
-                    "Implemented categorization system by interests, meeting times, and club types",
-                    "Created responsive UI for easy browsing on desktop and mobile devices",
-                    "Completed during SDSU hackathon with focus on improving student engagement"
-                ],
-                technologies: ["Django", "Python", "BeautifulSoup", "Web Scraping", "SQLite", "HTML/CSS", "Bootstrap"]
-            }
-        };
+  <!-- -- PROJECT DETAIL MODAL ------------------------ -->
+  <div id="proj-modal" class="proj-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="proj-modal-backdrop"></div>
+    <div class="proj-modal-panel">
+      <button class="proj-modal-close" aria-label="Close project details">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M1 1l16 16M17 1L1 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div id="modal-body" class="proj-modal-body"><!-- filled by JS --></div>
+    </div>
+  </div>
 
-        const modalMarkupCache = {};
-
-        function createModalMarkup(project) {
-            return `
-                <h2>${project.title}</h2>
-                <div class="modal-meta">
-                    <span class="modal-date">${project.date}</span>
-                    <span class="modal-role">${project.role}</span>
-                </div>
-                <p class="modal-description">${project.description}</p>
-
-                <h3>Key Features & Achievements</h3>
-                <ul class="modal-details">
-                    ${project.details.map(detail => `<li>${detail}</li>`).join('')}
-                </ul>
-
-                <h3>Technologies Used</h3>
-                <div class="modal-tags">
-                    ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
-                </div>
-
-                ${project.github ? `<a href="${project.github}" target="_blank" class="btn btn-primary modal-btn">View on GitHub</a>` : ''}
-            `;
-        }
-
-        function openModal(projectId) {
-            const project = projectData[projectId];
-            if (!project) return;
-
-            if (!modalMarkupCache[projectId]) {
-                modalMarkupCache[projectId] = createModalMarkup(project);
-            }
-
-            document.getElementById('modalBody').innerHTML = modalMarkupCache[projectId];
-            document.getElementById('projectModal').style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            document.body.classList.add('modal-open');
-        }
-
-        function closeModal() {
-            document.getElementById('projectModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-            document.body.classList.remove('modal-open');
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('projectModal');
-            if (event.target === modal) {
-                closeModal();
-            }
-        }
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Keyboard support for project cards (Enter/Space)
-        document.querySelectorAll('.project-card').forEach(function(card) {
-            card.addEventListener('keydown', function(event) {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    card.click();
-                }
-            });
-        });
-
-    </script>
+  <!-- Matter.js CDN (lightweight, ~85 KB) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" integrity="sha512-0Ed4NhiFgkD+NN9V/1l+GNqiuSJvJMiASp2fgcFJQWlEFrm1tHIxtLJVzEA1GimEJYRa/eGVb4mQiUUqI/Og==" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
 </body>
 </html>

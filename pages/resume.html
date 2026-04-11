@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Resume of Angel Guzman – backend & systems developer, CS graduate from SDSU.">
+  <title>Resume – Angel Guzman</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand" aria-label="Angel Guzman – home">
+        <span class="brand-name">Angel Guzman</span>
+        <span class="brand-tag">// dev</span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html" class="active">Resume</a></li>
+          <li><a href="mailto:angel.gu.perez@gmail.com" class="nav-cta">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Resume</span>
+        </nav>
+        <h1>Resume</h1>
+        <p>Angel Guzman · San Diego, CA · <a href="mailto:angel.gu.perez@gmail.com" style="color:var(--blue-400)">angel.gu.perez@gmail.com</a> · (858) 231-9519</p>
+      </div>
+    </div>
+
+    <section class="resume-page" aria-label="Resume content">
+      <div class="container">
+
+        <!-- Summary -->
+        <div class="resume-block">
+          <h2>Summary</h2>
+          <p style="color:var(--text-2);font-size:0.95rem;line-height:1.8;">
+            Computer Science graduate focused on backend systems, distributed applications, and networking fundamentals.
+            Experienced in building containerised services, REST APIs, and IoT systems, with strong debugging and
+            systems-level problem solving. Comfortable working across Linux environments, networking layers,
+            and cloud deployments.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div class="resume-block">
+          <h2>Education</h2>
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span class="resume-entry-title">San Diego State University</span>
+              <span class="resume-entry-date">Aug 2021 – May 2025</span>
+            </div>
+            <div class="resume-entry-sub">Bachelor of Science in Computer Science</div>
+          </div>
+        </div>
+
+        <!-- Experience / Projects -->
+        <div class="resume-block">
+          <h2>Projects</h2>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span class="resume-entry-title">CapyTechnologies – Backend Automation Platform</span>
+              <span class="resume-entry-date">May 2025 – Present</span>
+            </div>
+            <div class="resume-entry-sub">Django · Docker · Celery · Google Cloud</div>
+            <ul>
+              <li>Built Instagram story automation feature supporting 100+ test users</li>
+              <li>Developing backend infrastructure for scalable social media automation</li>
+              <li>Containerised deployment with Docker on Google Cloud Platform</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span class="resume-entry-title">Distributed Flask + Redis System (Dockerised Lab)</span>
+              <span class="resume-entry-date">2025</span>
+            </div>
+            <div class="resume-entry-sub">Python · Flask · Redis · Docker · Integration Testing</div>
+            <ul>
+              <li>Built multi-container distributed app separating API and state layers using Docker</li>
+              <li>Designed REST endpoints with fault-tolerant handling (503 on service failure)</li>
+              <li>Implemented integration test layers covering availability, API correctness, and state consistency</li>
+              <li>Simulated network/service failures (Redis downtime) to validate resilience</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span class="resume-entry-title">zachsherm.quest – Production Website</span>
+              <span class="resume-entry-date">2024 – 2025</span>
+            </div>
+            <div class="resume-entry-sub">Django · Docker · Nginx · Cloudflare · Linux VPS</div>
+            <ul>
+              <li>Deployed and maintained production website on a Linux VPS with custom domain and HTTPS</li>
+              <li>Configured Nginx reverse proxy and containerised services using Docker</li>
+              <li>Secured with Cloudflare DNS + SSL protection</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span class="resume-entry-title">Wireless Classroom Air Quality Monitor</span>
+              <span class="resume-entry-date">December 2024</span>
+            </div>
+            <div class="resume-entry-sub">Arduino · Flask · Raspberry Pi · Twilio · Python</div>
+            <ul>
+              <li>Led development of classroom CO₂/temperature/humidity monitor with SMS alerts</li>
+              <li>Built Flask web dashboard for real-time data visualisation and historical trends</li>
+              <li>Piloted in university classroom, improving indoor air awareness for students</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span class="resume-entry-title">ESP32 Embedded Interface System / Digimon Virtual Pet</span>
+              <span class="resume-entry-date">Jun – Sep 2025</span>
+            </div>
+            <div class="resume-entry-sub">C++ · PlatformIO · ESP32</div>
+            <ul>
+              <li>Developed embedded UI system with state management on microcontroller</li>
+              <li>Custom sprites, animation, and hardware button input handling</li>
+              <li>Worked close to hardware constraints and low-level memory management</li>
+            </ul>
+          </div>
+
+          <div class="resume-entry">
+            <div class="resume-entry-header">
+              <span class="resume-entry-title">Aztec Connect – Club Scraper (SDSU Hackathon)</span>
+              <span class="resume-entry-date">April 2025</span>
+            </div>
+            <div class="resume-entry-sub">Django · Python · Web Scraping</div>
+            <ul>
+              <li>Designed scraper and web app improving discoverability of SDSU's 200+ clubs</li>
+              <li>Built and shipped within a 24-hour hackathon window</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="resume-block">
+          <h2>Technical Skills</h2>
+
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <div>
+              <p style="font-size:0.8rem;color:var(--text-3);font-family:var(--font-mono);margin-bottom:0.4rem;">LANGUAGES</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">C#</span>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.8rem;color:var(--text-3);font-family:var(--font-mono);margin-bottom:0.4rem;">BACKEND & FRAMEWORKS</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">Flask</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">REST APIs</span>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.8rem;color:var(--text-3);font-family:var(--font-mono);margin-bottom:0.4rem;">SYSTEMS & TOOLS</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Linux / Ubuntu</span>
+                <span class="skill-tag">Nginx</span>
+                <span class="skill-tag">Google Cloud</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">GDB</span>
+                <span class="skill-tag">TCP/IP</span>
+              </div>
+            </div>
+            <div>
+              <p style="font-size:0.8rem;color:var(--text-3);font-family:var(--font-mono);margin-bottom:0.4rem;">HARDWARE / EMBEDDED</p>
+              <div class="skill-tags">
+                <span class="skill-tag">Arduino</span>
+                <span class="skill-tag">Raspberry Pi</span>
+                <span class="skill-tag">ESP32</span>
+                <span class="skill-tag">PlatformIO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download bar -->
+        <div class="resume-download-bar">
+          <p>Want a PDF copy of my resume?</p>
+          <a href="mailto:angel.gu.perez@gmail.com?subject=Resume%20Request" class="btn btn-primary">Request via Email</a>
+          <a href="https://www.linkedin.com/in/angel-guzman-81b533236" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn Profile ↗</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span class="footer-name">Angel Guzman &copy; 2026</span>
+      <span class="footer-built">Built from scratch · Hosted on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
