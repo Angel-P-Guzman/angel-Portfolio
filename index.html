@@ -43,10 +43,7 @@
   <!-- -- INTRO -------------------------------------------- -->
   <main id="main-content">
     <section class="intro" aria-labelledby="intro-heading">
-      <!-- Node network canvas (behind Matter.js) -->
       <canvas class="net-canvas" aria-hidden="true"></canvas>
-      <!-- Matter.js canvas -->
-      <canvas id="physics-canvas" aria-hidden="true"></canvas>
 
       <div class="intro-content">
         <p class="intro-eyebrow">Hi, I'm</p>
@@ -79,7 +76,7 @@
       </div>
     </section>
 
-    <!-- -- FEATURED PROJECTS (teaser) --------------------- -->
+    <!-- -- FEATURED PROJECTS --------------------- -->
     <section class="section featured-projects" aria-labelledby="fp-heading">
       <div class="container">
         <div class="section-header">
@@ -182,6 +179,24 @@
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- -- Play ------------------------------------------- -->
+    <section class="playground-section" id="playground">
+      <div class="container">
+        <div class="section-header">
+          <h2> for fun </h2>
+        </div>
+      </div>
+      <div class="playground-wrap">
+        <canvas id="physics-canvas"></canvas>
+        <div class="playground-controls">
+          <button id="pg-gravity" class="pg-btn">gravity on</button>
+          <button id="pg-shake" class="pg-btn">shake</button>
+          <button id="pg-reset" class="pg-btn">reset</button>
+        </div>
+        <p class="playground-hint" aria-hidden="true">drag to throw &nbsp;&middot;&nbsp; click a shape to recolor</p>
       </div>
     </section>
 

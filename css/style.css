@@ -216,11 +216,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   padding-top: 62px;
 }
 #physics-canvas {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
   display: block;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 canvas.net-canvas {
   position: absolute;
@@ -323,6 +321,55 @@ canvas.net-canvas {
 @keyframes scrollBob {
   0%, 100% { transform: scaleY(1); opacity: 0.6; }
   50% { transform: scaleY(1.3); opacity: 1; }
+}
+
+/* ── PLAYGROUND ─────────────────────────────────────────────── */
+.playground-section { padding-bottom: 0; }
+.playground-section .container { padding-bottom: var(--space-lg); }
+.playground-wrap {
+  position: relative;
+  height: 65vh;
+  min-height: 380px;
+  cursor: crosshair;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+.playground-controls {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+.pg-btn {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-3);
+  background: rgba(6,13,26,0.75);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  letter-spacing: 0.06em;
+}
+.pg-btn:hover { color: var(--blue-400); border-color: var(--border-h); }
+.pg-btn.active { color: var(--blue-400); border-color: var(--blue-400); background: rgba(77,166,255,0.1); }
+.playground-hint {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-3);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0.7;
 }
 
 /* ── BUTTONS ─────────────────────────────────────────────────── */
