@@ -40,26 +40,28 @@
     </div>
   </header>
 
-  <!-- -- HERO ----------------------------------------------- -->
+  <!-- -- INTRO -------------------------------------------- -->
   <main id="main-content">
-    <section class="hero" aria-labelledby="hero-heading">
-      <!-- Matter.js canvas lives behind content -->
+    <section class="intro" aria-labelledby="intro-heading">
+      <!-- Node network canvas (behind Matter.js) -->
+      <canvas class="net-canvas" aria-hidden="true"></canvas>
+      <!-- Matter.js canvas -->
       <canvas id="physics-canvas" aria-hidden="true"></canvas>
 
-      <div class="hero-content">
-        <p class="hero-eyebrow">Hi, I'm</p>
-        <h1 id="hero-heading" class="hero-name">Angel Guzman</h1>
-        <p class="hero-tagline">Backend &amp; Systems Developer</p>
-        <p class="hero-bio">
+      <div class="intro-content">
+        <p class="intro-eyebrow">Hi, I'm</p>
+        <h1 id="intro-heading" class="intro-name">Angel Guzman</h1>
+        <p class="intro-tagline">Backend &amp; Systems Developer</p>
+        <p class="intro-bio">
           CS grad from SDSU. I build containerised services, REST APIs, and IoT systems.
           Comfortable in Linux, distributed environments, and anywhere close to the metal.
         </p>
-        <div class="hero-actions">
+        <div class="intro-actions">
           <a href="pages/projects.html" class="btn btn-primary">View Projects</a>
           <a href="pages/resume.html" class="btn btn-outline">Resume</a>
           <a href="https://github.com/Angel-P-Guzman" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        <div class="hero-badges" aria-label="Tech stack highlights">
+        <div class="intro-badges" aria-label="Tech stack highlights">
           <span class="badge">Python</span>
           <span class="badge">Docker</span>
           <span class="badge">Django</span>
@@ -71,7 +73,7 @@
         </div>
       </div>
 
-      <div class="hero-scroll-hint" aria-hidden="true">
+      <div class="intro-scroll" aria-hidden="true">
         <span>scroll</span>
         <div class="scroll-line"></div>
       </div>
@@ -202,6 +204,7 @@
     <div class="container footer-inner">
       <span class="footer-name">Angel Guzman &copy; 2026</span>
       <span class="footer-built">Built from scratch / Hosted on GitHub Pages</span>
+      <a href="pages/credits.html" class="footer-credits">Credits</a>
     </div>
   </footer>
 
@@ -218,8 +221,9 @@
     </div>
   </div>
 
-  <!-- Matter.js CDN (lightweight, ~85 KB) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js" integrity="sha512-0Ed4NhiFgkD+NN9V/1l+GNqiuSJvJMiASp2fgcFJQWlEFrm1tHIxtLJVzEA1GimEJYRa/eGVb4mQiUUqI/Og==" crossorigin="anonymous"></script>
+  <!-- Matter.js (local) -->
+  <script src="css/matter/matter.min.js"></script>
+  <script src="js/network.js"></script>
   <script src="js/main.js"></script>
   <script src="js/projects.js"></script>
 </body>

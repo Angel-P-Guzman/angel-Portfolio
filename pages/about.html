@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Angel Guzman – CS graduate, backend & systems developer in San Diego, CA.">
-  <title>About – Angel Guzman</title>
+  <meta name="description" content="About Angel Guzman - CS graduate, backend and systems developer in San Diego, CA.">
+  <title>About - Angel Guzman</title>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 
   <header class="navbar" role="banner">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-brand" aria-label="Angel Guzman – home">
+      <a href="../index.html" class="nav-brand" aria-label="Angel Guzman - home">
         <span class="brand-name">Angel Guzman</span>
         <span class="brand-tag">// dev</span>
       </a>
@@ -37,83 +37,122 @@
   </header>
 
   <main id="main-content">
-    <div class="page-header">
-      <div class="container">
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="../index.html">Home</a>
-          <span aria-hidden="true">/</span>
-          <span>About</span>
-        </nav>
-        <h1>About Me</h1>
-        <p>A bit about who I am, how I got here, and what I'm working on.</p>
+
+    <!-- ABOUT HERO -->
+    <section class="about-intro" aria-label="About">
+      <canvas id="about-canvas" aria-hidden="true"></canvas>
+      <div class="about-intro-content">
+        <p class="intro-eyebrow">About me</p>
+        <h1 class="about-intro-name">Angel Guzman</h1>
+        <p class="about-intro-sub">Backend &amp; Systems Developer &nbsp;/&nbsp; San Diego, CA</p>
+        <p class="about-intro-bio">
+          CS grad from SDSU. 
+        </p>
+        <div class="about-intro-links">
+          <a href="mailto:angel.gu.perez@gmail.com" class="btn btn-primary">Email me</a>
+          <a href="https://github.com/Angel-P-Guzman" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/angel-guzman-81b533236" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
       </div>
-    </div>
+      <button class="about-physics-toggle" id="physics-toggle" aria-label="Toggle background animation" title="Toggle animation">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" id="toggle-icon-pause">
+          <rect x="3" y="2" width="4" height="12" rx="1" fill="currentColor"/>
+          <rect x="9" y="2" width="4" height="12" rx="1" fill="currentColor"/>
+        </svg>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" id="toggle-icon-play" style="display:none">
+          <path d="M4 2l10 6-10 6V2z" fill="currentColor"/>
+        </svg>
+      </button>
+    </section>
 
-    <section class="about-page" aria-label="About Angel Guzman">
+    <!-- ABOUT CONTENT -->
+    <section class="about-content" aria-label="About details">
       <div class="container">
 
-        <div class="about-section">
-          <h2>Who I am</h2>
+        <!-- Summary -->
+        <div class="about-summary">
           <p>
-            I'm Angel Guzman, a Computer Science graduate from San Diego State University (BS, May 2025).
-            I'm based in San Diego, CA and focused on backend systems, distributed applications,
-            and anything that touches the hardware layer.
-          </p>
-          <p>
-            I enjoy understanding how systems actually work — from TCP/IP and container networking
-            to microcontroller memory constraints. I'm comfortable debugging production issues at 2am
-            as much as designing clean REST APIs on a whiteboard.
+            Computer Science graduate focused on backend systems, distributed applications, and networking fundamentals.
+            Experienced in building containerised services, REST APIs, and IoT systems, with strong debugging and
+            systems-level problem solving. Comfortable working across Linux environments, networking layers,
+            and cloud deployments.
           </p>
         </div>
 
-        <div class="about-section">
-          <h2>What I build</h2>
-          <p>
-            Most of my work lives in the backend. I've built containerised Python services with Docker
-            and deployed them in cloud and on-prem Linux environments. I've also done embedded work —
-            writing C++ for ESP32 microcontrollers and wiring up IoT sensor systems with Raspberry Pi and Arduino.
-          </p>
-          <p>
-            Projects I'm particularly proud of: a distributed Flask + Redis lab environment that simulates
-            real failure modes, a wireless classroom air quality monitor with SMS alerts, and a Digimon
-            virtual pet running on an ESP32 with custom sprites — just for the joy of it.
-          </p>
+        <!-- Cards row -->
+        <div class="about-cards-row">
+
+          <div class="about-card">
+            <h3>Education</h3>
+            <p class="about-card-title">San Diego State University</p>
+            <p class="about-card-sub">B.S. Computer Science</p>
+            <p class="about-card-date">Aug 2021 - May 2025</p>
+          </div>
+
+          <div class="about-card">
+            <h3>Languages</h3>
+            <div class="about-tag-list">
+              <span>Python</span><span>C++</span><span>Java</span><span>JavaScript</span><span>C#</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <h3>Backend</h3>
+            <div class="about-tag-list">
+              <span>Django</span><span>Flask</span><span>Node.js</span><span>REST APIs</span><span>Celery</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <h3>Systems &amp; Infra</h3>
+            <div class="about-tag-list">
+              <span>Docker</span><span>Linux</span><span>Nginx</span><span>Google Cloud</span><span>Git</span><span>TCP/IP</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <h3>Hardware</h3>
+            <div class="about-tag-list">
+              <span>ESP32</span><span>Arduino</span><span>Raspberry Pi</span><span>PlatformIO</span>
+            </div>
+          </div>
+
         </div>
 
-        <div class="about-section">
-          <h2>Current focus</h2>
-          <p>
-            Building out the backend platform for <strong>CapyTechnologies</strong> — a social media
-            automation tool with Celery async workers, Docker, and Google Cloud. I care about reliability,
-            clean API design, and systems that don't fall over under load.
-          </p>
-          <p>
-            Also open to backend, systems, or IoT roles in San Diego or remote. If you're working on
-            something interesting in distributed systems, embedded hardware, or developer tooling — reach out.
-          </p>
-        </div>
-
-        <div class="about-section">
-          <h2>Elsewhere</h2>
-          <div class="cta-actions" style="justify-content:flex-start;flex-wrap:wrap;">
-            <a href="https://github.com/Angel-P-Guzman" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/angel-guzman-81b533236" class="btn btn-outline" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a href="mailto:angel.gu.perez@gmail.com" class="btn btn-primary">Email me</a>
-            <a href="resume.html" class="btn btn-ghost">Resume →</a>
+        <!-- Interests & Hobbies -->
+        <div class="about-extras">
+          <div class="about-extra-block">
+            <span class="about-block-label">Interests</span>
+            <div class="about-tag-list">
+              <span>Distributed Systems</span><span>Embedded Hardware</span><span>Networking</span>
+              <span>Compilers</span><span>Reverse Engineering</span><span>Open Source</span>
+              <span>Linux</span><span>IoT</span>
+            </div>
+          </div>
+          <div class="about-extra-block">
+            <span class="about-block-label">Hobbies</span>
+            <div class="about-tag-list">
+              <span>Gaming</span><span>3D Printing</span><span>DIY Electronics</span>
+              <span>Hiking</span><span>Anime</span><span>Reading</span>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
       <span class="footer-name">Angel Guzman &copy; 2026</span>
-      <span class="footer-built">Built from scratch · Hosted on GitHub Pages</span>
+      <span class="footer-built">Built from scratch - Hosted on GitHub Pages</span>
+      <a href="credits.html" class="footer-credits">Credits</a>
     </div>
   </footer>
 
+  <script src="../css/matter/matter.min.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/about.js"></script>
 </body>
 </html>

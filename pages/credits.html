@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Credits and open-source libraries used on Angel Guzman's portfolio site.">
+  <title>Credits - Angel Guzman</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="navbar" role="banner">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-brand" aria-label="Angel Guzman - home">
+        <span class="brand-name">Angel Guzman</span>
+        <span class="brand-tag">// dev</span>
+      </a>
+      <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+      <nav id="nav-menu" aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="mailto:angel.gu.perez@gmail.com" class="nav-cta">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <span>Credits</span>
+        </nav>
+        <h1>Credits</h1>
+        <p>Open-source libraries and tools used to build this site.</p>
+      </div>
+      <canvas class="net-canvas" aria-hidden="true"></canvas>
+    </div>
+
+    <section class="credits-page" aria-label="Credits">
+      <div class="container">
+
+        <p class="credits-intro">
+          This site is built by hand with plain HTML, CSS, and vanilla JavaScript -- no frameworks.
+          The following open-source projects are used and credited here.
+        </p>
+
+        <div class="credits-grid">
+
+          <div class="credits-card">
+            <div class="credits-card-header">
+              <span class="credits-card-name">Matter.js</span>
+              <span class="credits-card-version">v0.19.0</span>
+            </div>
+            <p class="credits-card-desc">
+              2D rigid-body physics engine for the web. Used for the falling shapes on the home page.
+            </p>
+            <div class="credits-card-links">
+              <a href="https://brm.io/matter-js/" target="_blank" rel="noopener noreferrer">Website</a>
+              <a href="https://github.com/liabru/matter-js" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <p class="credits-card-license">MIT License &mdash; Copyright &copy; Liam Brummitt</p>
+          </div>
+
+          <div class="credits-card">
+            <div class="credits-card-header">
+              <span class="credits-card-name">Inter</span>
+              <span class="credits-card-version">Typeface</span>
+            </div>
+            <p class="credits-card-desc">
+              Variable font designed for computer screens. Used as the primary UI typeface across the site.
+            </p>
+            <div class="credits-card-links">
+              <a href="https://rsms.me/inter/" target="_blank" rel="noopener noreferrer">Website</a>
+              <a href="https://github.com/rsms/inter" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <p class="credits-card-license">SIL Open Font License &mdash; Copyright &copy; Rasmus Andersson</p>
+          </div>
+
+          <div class="credits-card">
+            <div class="credits-card-header">
+              <span class="credits-card-name">JetBrains Mono</span>
+              <span class="credits-card-version">Typeface</span>
+            </div>
+            <p class="credits-card-desc">
+              Monospaced typeface made for developers. Used for code snippets, labels, and badges on the site.
+            </p>
+            <div class="credits-card-links">
+              <a href="https://www.jetbrains.com/lp/mono/" target="_blank" rel="noopener noreferrer">Website</a>
+              <a href="https://github.com/JetBrains/JetBrainsMono" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <p class="credits-card-license">SIL Open Font License &mdash; Copyright &copy; JetBrains</p>
+          </div>
+
+          <div class="credits-card">
+            <div class="credits-card-header">
+              <span class="credits-card-name">GitHub Pages</span>
+              <span class="credits-card-version">Hosting</span>
+            </div>
+            <p class="credits-card-desc">
+              Static site hosting by GitHub. This portfolio is served directly from the repository at no cost.
+            </p>
+            <div class="credits-card-links">
+              <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">Website</a>
+            </div>
+            <p class="credits-card-license">Service by GitHub, Inc.</p>
+          </div>
+
+        </div>
+
+        <p class="credits-note">
+          The particle network effect (on all pages) and the site design, layout, and code are original work.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <span class="footer-name">Angel Guzman &copy; 2026</span>
+      <span class="footer-built">Built from scratch &middot; Hosted on GitHub Pages</span>
+      <a href="credits.html" class="footer-credits" aria-current="page">Credits</a>
+    </div>
+  </footer>
+
+  <script src="../js/network.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
