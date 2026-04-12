@@ -189,14 +189,22 @@
           <h2> for fun </h2>
         </div>
       </div>
-      <div class="playground-wrap">
+      <div class="pg-tabs" role="tablist">
+        <button class="pg-tab active" id="tab-physics" role="tab" aria-selected="true"  aria-controls="panel-physics">shapes</button>
+        <button class="pg-tab"        id="tab-bubbles" role="tab" aria-selected="false" aria-controls="panel-bubbles">bubbles</button>
+      </div>
+      <div class="playground-wrap" id="panel-physics" role="tabpanel">
         <canvas id="physics-canvas"></canvas>
         <div class="playground-controls">
           <button id="pg-gravity" class="pg-btn">gravity on</button>
-          <button id="pg-shake" class="pg-btn">shake</button>
-          <button id="pg-reset" class="pg-btn">reset</button>
+          <button id="pg-shake"   class="pg-btn">shake</button>
+          <button id="pg-reset"   class="pg-btn">reset</button>
         </div>
         <p class="playground-hint" aria-hidden="true">drag to throw &nbsp;&middot;&nbsp; click a shape to recolor</p>
+      </div>
+      <div class="playground-wrap" id="panel-bubbles" role="tabpanel" hidden>
+        <canvas id="bubble-canvas"></canvas>
+        <p class="playground-hint" aria-hidden="true">click a bubble to pop it</p>
       </div>
     </section>
 

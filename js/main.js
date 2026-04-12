@@ -324,3 +324,284 @@
 
   requestAnimationFrame(init);
 })();
+
+// ── Playground tab switcher ────────────────────────────────────
+(function () {
+  var tabs   = document.querySelectorAll('.pg-tab');
+  var panels = document.querySelectorAll('.playground-wrap[role="tabpanel"]');
+  if (!tabs.length) return;
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(function (p) { p.hidden = true; });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      var target = document.getElementById(tab.getAttribute('aria-controls'));
+      if (target) { target.hidden = false; window.dispatchEvent(new Event('resize')); }
+    });
+  });
+})();
+
+// ── Bubble mode ────────────────────────────────────────────────
+(function () {
+  var canvas = document.getElementById('bubble-canvas');
+  if (!canvas) return;
+  var wrap = canvas.parentElement;
+  var ctx, W, H, animId;
+  var bubbles = [];
+  var particles = []; // pop sparks
+  var rings = [];    // ripple rings
+  var MAX = 60;
+
+  var COLORS = [
+    '#4da6ff','#38d9a9','#f093fb','#f7b731',
+    '#ff5a5a','#5ae6b4','#b482ff','#ffa032',
+    '#0d6edc','#82dc5a','#00bcbc','#ff783c',
+  ];
+  var SHAPES = ['circle','circle','circle','hex','diamond','circle'];
+
+  function randColor() { return COLORS[Math.floor(Math.random() * COLORS.length)]; }
+  function randShape() { return SHAPES[Math.floor(Math.random() * SHAPES.length)]; }
+
+  function makeBubble(x, y, r, vx, vy) {
+    var speed = 0.3 + Math.random() * 0.5;
+    var angle = Math.random() * Math.PI * 2;
+    return {
+      x: x, y: y, r: r,
+      vx: vx !== undefined ? vx : Math.cos(angle) * speed,
+      vy: vy !== undefined ? vy : Math.sin(angle) * speed,
+      color: randColor(),
+      shape: randShape(),
+      angle: Math.random() * Math.PI * 2,
+      av: (Math.random() < 0.5 ? 1 : -1) * (0.004 + Math.random() * 0.006),
+      alpha: 1,
+      popR: 0,       // set on pop
+      dying: false,
+      dyingT: 0,
+    };
+  }
+
+  function spawnInitial() {
+    bubbles = [];
+    var count = Math.min(MAX, Math.floor(W * H / 22000));
+    count = Math.max(count, 14);
+    for (var i = 0; i < count; i++) {
+      var r = 18 + Math.random() * 22;
+      bubbles.push(makeBubble(
+        r + Math.random() * (W - r * 2),
+        r + Math.random() * (H - r * 2),
+        r, undefined, undefined
+      ));
+    }
+  }
+
+  // ── draw a single bubble ───────────────────────────────────
+  function drawBubble(b) {
+    ctx.save();
+    ctx.globalAlpha = b.alpha;
+    ctx.translate(b.x, b.y);
+    ctx.rotate(b.angle);
+
+    var r = b.r;
+    ctx.beginPath();
+    if (b.shape === 'circle') {
+      ctx.arc(0, 0, r, 0, Math.PI * 2);
+    } else if (b.shape === 'hex') {
+      for (var i = 0; i < 6; i++) {
+        var a = (i / 6) * Math.PI * 2 - Math.PI / 6;
+        i === 0 ? ctx.moveTo(r * Math.cos(a), r * Math.sin(a))
+                : ctx.lineTo(r * Math.cos(a), r * Math.sin(a));
+      }
+    } else { // diamond
+      ctx.moveTo(0, -r); ctx.lineTo(r * 0.7, 0);
+      ctx.lineTo(0, r);  ctx.lineTo(-r * 0.7, 0);
+    }
+    ctx.closePath();
+
+    // gradient fill for a bubble-like look
+    var grad = ctx.createRadialGradient(-r * 0.3, -r * 0.3, r * 0.05, 0, 0, r);
+    grad.addColorStop(0, b.color + 'ff');
+    grad.addColorStop(0.5, b.color + '88');
+    grad.addColorStop(1, b.color + '22');
+    ctx.fillStyle = grad;
+    ctx.fill();
+
+    ctx.strokeStyle = b.color;
+    ctx.lineWidth = 1.2;
+    ctx.globalAlpha = b.alpha * 0.5;
+    ctx.stroke();
+
+    ctx.restore();
+  }
+
+  // ── pop: spawn children + particles + ripple ring ──────────
+  function popBubble(b) {
+    b.dying  = true;
+    b.dyingT = 0;
+    b.popR   = b.r;
+
+    // ring ripple
+    rings.push({ x: b.x, y: b.y, r: b.r * 0.8, maxR: b.r * 2.4, color: b.color, alpha: 0.9 });
+
+    // spark particles — fly outward from the bubble edge
+    var count = Math.round(6 + b.r * 0.35);
+    for (var k = 0; k < count; k++) {
+      var a = (k / count) * Math.PI * 2 + Math.random() * 0.4;
+      var spd = 1.8 + Math.random() * 2.8;
+      particles.push({
+        x: b.x + Math.cos(a) * b.r * 0.6,
+        y: b.y + Math.sin(a) * b.r * 0.6,
+        vx: Math.cos(a) * spd,
+        vy: Math.sin(a) * spd,
+        r: 2 + Math.random() * 3,
+        color: b.color,
+        alpha: 1,
+      });
+    }
+
+    // children
+    if (b.r > 14 && bubbles.length < MAX) {
+      var children = b.r > 25 ? 3 : 2;
+      for (var i = 0; i < children; i++) {
+        var childR = b.r * 0.52;
+        if (childR < 7) continue;
+        var spread = 2.8;
+        var cvx = b.vx * 0.5 + (Math.random() - 0.5) * spread;
+        var cvy = b.vy * 0.5 + (Math.random() - 0.5) * spread;
+        bubbles.push(makeBubble(b.x, b.y, childR, cvx, cvy));
+      }
+    }
+  }
+
+  // ── step ──────────────────────────────────────────────────
+  function step() {
+    for (var i = bubbles.length - 1; i >= 0; i--) {
+      var b = bubbles[i];
+
+      if (b.dying) {
+        b.dyingT++;
+        // quick outward burst then gone in ~10 frames
+        var t = b.dyingT / 10;
+        b.r     = b.popR * (1 + 0.45 * t);
+        b.alpha = Math.max(0, 1 - t * 1.1);
+        if (b.dyingT >= 10) { bubbles.splice(i, 1); continue; }
+      } else {
+        b.vx *= 0.992; b.vy *= 0.992;   // gentle drag
+        b.x += b.vx; b.y += b.vy;
+        b.angle += b.av;
+
+        // wall bounce (0.55 = lose ~45% energy each hit)
+        if (b.x - b.r < 0)  { b.x = b.r;      b.vx =  Math.abs(b.vx) * 0.55; }
+        if (b.x + b.r > W)  { b.x = W - b.r;  b.vx = -Math.abs(b.vx) * 0.55; }
+        if (b.y - b.r < 0)  { b.y = b.r;      b.vy =  Math.abs(b.vy) * 0.55; }
+        if (b.y + b.r > H)  { b.y = H - b.r;  b.vy = -Math.abs(b.vy) * 0.55; }
+
+        // soft bubble–bubble repel (no hard collision, just a gentle push)
+        for (var j = i - 1; j >= 0; j--) {
+          var o = bubbles[j];
+          if (o.dying) continue;
+          var dx = b.x - o.x, dy = b.y - o.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          var minD = b.r + o.r;
+          if (dist < minD && dist > 0.1) {
+            var nx = dx / dist, ny = dy / dist;
+            var push = (minD - dist) * 0.04;
+            b.vx += nx * push; b.vy += ny * push;
+            o.vx -= nx * push; o.vy -= ny * push;
+            // keep speed bounded
+            var spB = Math.sqrt(b.vx*b.vx + b.vy*b.vy);
+            var spO = Math.sqrt(o.vx*o.vx + o.vy*o.vy);
+            if (spB > 1.5) { b.vx = b.vx/spB*1.5; b.vy = b.vy/spB*1.5; }
+            if (spO > 1.5) { o.vx = o.vx/spO*1.5; o.vy = o.vy/spO*1.5; }
+          }
+        }
+      }
+    }
+  }
+
+  // ── step particles + rings ─────────────────────────────────
+  function stepFx() {
+    for (var i = particles.length - 1; i >= 0; i--) {
+      var p = particles[i];
+      p.x += p.vx; p.y += p.vy;
+      p.vx *= 0.92; p.vy *= 0.92;
+      p.alpha -= 0.045;
+      if (p.alpha <= 0) { particles.splice(i, 1); }
+    }
+    for (var j = rings.length - 1; j >= 0; j--) {
+      var ring = rings[j];
+      ring.r     += (ring.maxR - ring.r) * 0.18;
+      ring.alpha -= 0.06;
+      if (ring.alpha <= 0) { rings.splice(j, 1); }
+    }
+  }
+
+  // ── render loop ───────────────────────────────────────────
+  function loop() {
+    animId = requestAnimationFrame(loop);
+    step();
+    stepFx();
+    ctx.clearRect(0, 0, W, H);
+    // rings behind bubbles
+    rings.forEach(function (ring) {
+      ctx.save();
+      ctx.globalAlpha = ring.alpha;
+      ctx.beginPath();
+      ctx.arc(ring.x, ring.y, ring.r, 0, Math.PI * 2);
+      ctx.strokeStyle = ring.color;
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.restore();
+    });
+    bubbles.forEach(drawBubble);
+    // sparks in front
+    particles.forEach(function (p) {
+      ctx.save();
+      ctx.globalAlpha = p.alpha;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+      ctx.restore();
+    });
+  }
+
+  // ── click to pop ──────────────────────────────────────────
+  canvas.addEventListener('click', function (e) {
+    var rect = canvas.getBoundingClientRect();
+    var mx = e.clientX - rect.left;
+    var my = e.clientY - rect.top;
+    for (var i = bubbles.length - 1; i >= 0; i--) {
+      var b = bubbles[i];
+      if (b.dying) continue;
+      var dx = mx - b.x, dy = my - b.y;
+      if (Math.sqrt(dx*dx + dy*dy) < b.r) {
+        popBubble(b);
+        break;
+      }
+    }
+  });
+
+  // ── init ──────────────────────────────────────────────────
+  function sizeCanvas() {
+    W = wrap.offsetWidth;
+    H = wrap.offsetHeight;
+    canvas.width  = W;
+    canvas.height = H;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+  }
+
+  // Start when first made visible (tab switch fires a resize event)
+  var started = false;
+  window.addEventListener('resize', function () {
+    if (wrap.hidden) return;
+    sizeCanvas();
+    if (!started) {
+      started = true;
+      ctx = canvas.getContext('2d');
+      spawnInitial();
+      loop();
+    }
+  });
+})();

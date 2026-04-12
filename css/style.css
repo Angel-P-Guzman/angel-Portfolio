@@ -325,7 +325,28 @@ canvas.net-canvas {
 
 /* ── PLAYGROUND ─────────────────────────────────────────────── */
 .playground-section { padding-bottom: 0; }
-.playground-section .container { padding-bottom: var(--space-lg); }
+.playground-section .container { padding-bottom: var(--space-md); }
+.pg-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+}
+.pg-tab {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--text-3);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  transition: color var(--dur-fast), border-color var(--dur-fast);
+  margin-bottom: -1px;
+}
+.pg-tab:hover  { color: var(--text-1); }
+.pg-tab.active { color: var(--blue-400); border-bottom-color: var(--blue-400); }
 .playground-wrap {
   position: relative;
   height: 65vh;
